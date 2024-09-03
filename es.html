@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Zomato</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(50, 146, 171);
+        }
+
+        /* Header and Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgb(237, 62, 62);
+            color: white;
+        }
+
+        .zom {
+            font-size: 24px;
+            text-shadow: 2px 2px rgb(53, 240, 240);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Hamburger menu styles */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            margin-left: auto;
+        }
+
+        .hamburger span {
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+
+        /* Hide the checkbox */
+        .menu-toggle {
+            display: none;
+        }
+
+        /* Mobile menu hidden by default */
+        .nav-links {
+            list-style-type: none;
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            background-color: rgb(237, 62, 62);
+            top: 60px;
+            right: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .nav-links li {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Show the menu when the checkbox is checked */
+        .menu-toggle:checked + .hamburger + .nav-links {
+            display: flex;
+        }
+
+        /* Desktop view */
+        @media (min-width: 768px) {
+            .hamburger {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                position: static;
+                background: none;
+            }
+
+            .nav-links li {
+                border: none;
+                padding: 0 20px;
+            }
+        }
+
+        /* Content styles */
+        .parent {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: row;
+            padding: 20px;
+        }
+
+        .div {
+            background-color: rgb(229, 168, 108);
+            width: 300px;
+            height: 250px;
+            padding: 10px;
+        }
+
+        .img1 {
+            width: 100%;
+            height: 200px;
+        }
+
+        .nme {
+            background-color: rgb(229, 168, 108);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 250px);
+            gap: 10px;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .jublee {
+            border: 2px solid rgb(5, 216, 146);
+            text-align: center;
+            color: aliceblue;
+            background-color: rgb(22, 75, 222);
+        }
+
+        .popular {
+            text-align: center;
+            text-decoration: underline;
+        }
+        /* Media Query for small screens */
+        @media (max-width: 768px) {
+            .parent {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .div {
+                max-width: 100%;
+            }
+        }
+
+        /* Media Query for extra small screens */
+        @media (max-width: 480px) {
+            .header {
+                flex-direction: column;
+            }
+
+            .hamburger {
+                margin-left: 0;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2 class="zom">Zomato</h2>
+        <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="home">Home</a></li>
+                <li><a href="#items">Items</a></li>
+                <li><a href="#loc">Locations</a></li>
+                <li><a href="#con">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="parent" id="items">
+        <div class="div">
+            <img class="img1" src="https://b.zmtcdn.com/data/pictures/5/19701655/9c87f7342e14a020689c2e28bac60998_o2_featured_v2.jpg?output-format=webp">
+            <center><p class="nme">Butterscotch ₹100</p></center>
+        </div>
+        <div class="div" id="#items">
+            <img class="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT29Gi1sUEjmwwMVCUvJnoTMK7xV8o0SwvJAw&s">
+            <center><p class="nme">Chicken frankie ₹120</p></center>
+        </div>
+        <div class="div">
+            <img class="img1" src="https://media.istockphoto.com/id/1359079961/photo/soan-papdi-delicious-indian-sweet.jpg?s=612x612&w=0&k=20&c=mtrd3SzuouGIvD263x2jUmYRU5-febm6Ie-OLHIZEeg=">
+            <center><p class="nme">Soan papad ₹70</p></center>
+        </div>
+        <div class="div">
+            <img class="img1" src="https://nestle.fitterfly.in/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbE1yIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ecebb9610f00af81b54ba0546d7715c19a3f33fa/19534_Podi_Masala_Crispy_Dosa.webp">
+            <center><p class="nme">Dosa ₹40</p></center>
+        </div>
+        <div class="div">
+            <img class="img1" src="https://t3.ftcdn.net/jpg/05/60/70/82/360_F_560708240_pMZPOuSfvblWGRoaiZFLT4wiFTzQPwQe.jpg">
+            <center><p class="nme">Pizza ₹200</p></center>
+        </div>
+        <div class="div">
+            <img class="img1" src="https://b.zmtcdn.com/data/dish_photos/7d7/f4c809c2170d66b9a0107ea0a50e87d7.jpeg">
+            <center><p class="nme">Fish fry ₹260</p></center>
+        </div>
+    </div>
+
+    <h2 class="popular">Popular localities in and around Hyderabad</h2>
+    <div class="grid" id="loc">
+        <div class="jublee">Jublee hills</div>
+        <div class="jublee">Gachibowli</div>
+        <div class="jublee">Banjara hills</div>
+        <div class="jublee">Hitech city</div>
+        <div class="jublee">Madhapur</div>
+        <div class="jublee">Kondapur</div>
+        <div class="jublee">Kukatpally</div>
+        <div class="jublee">Begumpet</div>
+        <div class="jublee">Abids</div>
+    </div>
+     <footer id="con" style="background-color: aquamarine;">
+        <center><p>www@gmail.com</p>
+            <p>123456</p></center>
+     </footer>
+</body>
+</html>
